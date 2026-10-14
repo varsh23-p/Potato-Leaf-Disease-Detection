@@ -1,0 +1,6 @@
+flask
+pillow
+numpy
+pytest
+selenium
+# tensorflow   (only needed to load the real Lab 8 model, potato_model.h5)

@@ -1,0 +1,442 @@
+[
+ {
+  "id": "BVA01",
+  "module": "validate_upload (min size)",
+  "technique": "BVA",
+  "input": "31x31 px",
+  "expected": "Invalid",
+  "actual": "Invalid (Image too small (minimum 32x32 pixels))",
+  "nodeid": "tests/test_bva.py::test_bva_min_dimension[BVA01]",
+  "status": "PASS"
+ },
+ {
+  "id": "BVA02",
+  "module": "validate_upload (min size)",
+  "technique": "BVA",
+  "input": "32x32 px",
+  "expected": "Valid",
+  "actual": "Valid (OK)",
+  "nodeid": "tests/test_bva.py::test_bva_min_dimension[BVA02]",
+  "status": "PASS"
+ },
+ {
+  "id": "BVA03",
+  "module": "validate_upload (min size)",
+  "technique": "BVA",
+  "input": "33x33 px",
+  "expected": "Valid",
+  "actual": "Valid (OK)",
+  "nodeid": "tests/test_bva.py::test_bva_min_dimension[BVA03]",
+  "status": "PASS"
+ },
+ {
+  "id": "BVA04",
+  "module": "validate_upload (max size)",
+  "technique": "BVA",
+  "input": "5242879 bytes",
+  "expected": "Valid",
+  "actual": "Valid (OK)",
+  "nodeid": "tests/test_bva.py::test_bva_max_file_size[BVA04]",
+  "status": "PASS"
+ },
+ {
+  "id": "BVA05",
+  "module": "validate_upload (max size)",
+  "technique": "BVA",
+  "input": "5242880 bytes",
+  "expected": "Valid",
+  "actual": "Valid (OK)",
+  "nodeid": "tests/test_bva.py::test_bva_max_file_size[BVA05]",
+  "status": "PASS"
+ },
+ {
+  "id": "BVA06",
+  "module": "validate_upload (max size)",
+  "technique": "BVA",
+  "input": "5242881 bytes",
+  "expected": "Invalid",
+  "actual": "Invalid (File too large (max 5 MB))",
+  "nodeid": "tests/test_bva.py::test_bva_max_file_size[BVA06]",
+  "status": "PASS"
+ },
+ {
+  "id": "BVA07",
+  "module": "predict_disease (threshold)",
+  "technique": "BVA",
+  "input": "top-class confidence = 0.59",
+  "expected": "Uncertain",
+  "actual": "Uncertain",
+  "nodeid": "tests/test_bva.py::test_bva_confidence_threshold[BVA07]",
+  "status": "PASS"
+ },
+ {
+  "id": "BVA08",
+  "module": "predict_disease (threshold)",
+  "technique": "BVA",
+  "input": "top-class confidence = 0.60",
+  "expected": "Early Blight",
+  "actual": "Early Blight",
+  "nodeid": "tests/test_bva.py::test_bva_confidence_threshold[BVA08]",
+  "status": "PASS"
+ },
+ {
+  "id": "BVA09",
+  "module": "predict_disease (threshold)",
+  "technique": "BVA",
+  "input": "top-class confidence = 0.61",
+  "expected": "Early Blight",
+  "actual": "Early Blight",
+  "nodeid": "tests/test_bva.py::test_bva_confidence_threshold[BVA09]",
+  "status": "PASS"
+ },
+ {
+  "id": "ECP01",
+  "module": "validate_upload (file type)",
+  "technique": "ECP",
+  "input": "leaf.jpg - Valid class: JPG",
+  "expected": "Accept",
+  "actual": "Accept (OK)",
+  "nodeid": "tests/test_ecp.py::test_ecp_file_extension[ECP01]",
+  "status": "PASS"
+ },
+ {
+  "id": "ECP02",
+  "module": "validate_upload (file type)",
+  "technique": "ECP",
+  "input": "leaf.png - Valid class: PNG",
+  "expected": "Accept",
+  "actual": "Accept (OK)",
+  "nodeid": "tests/test_ecp.py::test_ecp_file_extension[ECP02]",
+  "status": "PASS"
+ },
+ {
+  "id": "ECP03",
+  "module": "validate_upload (file type)",
+  "technique": "ECP",
+  "input": "leaf.gif - Invalid class: GIF",
+  "expected": "Reject",
+  "actual": "Reject (Unsupported file type. Use JPG or PNG)",
+  "nodeid": "tests/test_ecp.py::test_ecp_file_extension[ECP03]",
+  "status": "PASS"
+ },
+ {
+  "id": "ECP04",
+  "module": "validate_upload (file type)",
+  "technique": "ECP",
+  "input": "leaf.txt - Invalid class: TXT",
+  "expected": "Reject",
+  "actual": "Reject (Unsupported file type. Use JPG or PNG)",
+  "nodeid": "tests/test_ecp.py::test_ecp_file_extension[ECP04]",
+  "status": "PASS"
+ },
+ {
+  "id": "ECP05",
+  "module": "validate_upload (file type)",
+  "technique": "ECP",
+  "input": "leaf - Invalid class: no extension",
+  "expected": "Reject",
+  "actual": "Reject (Unsupported file type. Use JPG or PNG)",
+  "nodeid": "tests/test_ecp.py::test_ecp_file_extension[ECP05]",
+  "status": "PASS"
+ },
+ {
+  "id": "ECP06",
+  "module": "validate_upload (dimensions)",
+  "technique": "ECP",
+  "input": "10x10 px - Invalid class: < 32 px",
+  "expected": "Reject",
+  "actual": "Reject (Image too small (minimum 32x32 pixels))",
+  "nodeid": "tests/test_ecp.py::test_ecp_image_dimension[ECP06]",
+  "status": "PASS"
+ },
+ {
+  "id": "ECP07",
+  "module": "validate_upload (dimensions)",
+  "technique": "ECP",
+  "input": "256x256 px - Valid class: 32 - 4000 px",
+  "expected": "Accept",
+  "actual": "Accept (OK)",
+  "nodeid": "tests/test_ecp.py::test_ecp_image_dimension[ECP07]",
+  "status": "PASS"
+ },
+ {
+  "id": "ECP08",
+  "module": "validate_upload (file size)",
+  "technique": "ECP",
+  "input": "0 bytes - Invalid class: 0 bytes",
+  "expected": "Reject",
+  "actual": "Reject (Empty file)",
+  "nodeid": "tests/test_ecp.py::test_ecp_file_size[ECP08]",
+  "status": "PASS"
+ },
+ {
+  "id": "ECP09",
+  "module": "validate_upload (file size)",
+  "technique": "ECP",
+  "input": "2097152 bytes - Valid class: 1 B - 5 MB (2 MB)",
+  "expected": "Accept",
+  "actual": "Accept (OK)",
+  "nodeid": "tests/test_ecp.py::test_ecp_file_size[ECP09]",
+  "status": "PASS"
+ },
+ {
+  "id": "ECP10",
+  "module": "validate_upload (file size)",
+  "technique": "ECP",
+  "input": "8388608 bytes - Invalid class: > 5 MB (8 MB)",
+  "expected": "Reject",
+  "actual": "Reject (File too large (max 5 MB))",
+  "nodeid": "tests/test_ecp.py::test_ecp_file_size[ECP10]",
+  "status": "PASS"
+ },
+ {
+  "id": "IT01",
+  "module": "Validate + Preprocess + Predict",
+  "technique": "Integration",
+  "input": "early-blight leaf PNG",
+  "expected": "label = Early Blight",
+  "actual": "Early Blight",
+  "nodeid": "tests/test_integration.py::test_IT01_validate_preprocess_predict",
+  "status": "PASS"
+ },
+ {
+  "id": "IT02",
+  "module": "Predict + Advice",
+  "technique": "Integration",
+  "input": "late-blight leaf PNG",
+  "expected": "label = Late Blight and advice mentions 'late-blight'",
+  "actual": "Late Blight | Isolate or destroy infected plants immediately and apply a late-blight fungicide.",
+  "nodeid": "tests/test_integration.py::test_IT02_predict_plus_advice",
+  "status": "PASS"
+ },
+ {
+  "id": "IT03",
+  "module": "Web /predict + History",
+  "technique": "Integration",
+  "input": "upload h.png",
+  "expected": "history count = 1",
+  "actual": "1",
+  "nodeid": "tests/test_integration.py::test_IT03_web_predict_saves_history",
+  "status": "PASS"
+ },
+ {
+  "id": "IT04",
+  "module": "Web /predict + Validation + History",
+  "technique": "Integration",
+  "input": "upload x.txt",
+  "expected": "HTTP 400 and history count = 0",
+  "actual": "HTTP 400, count=0",
+  "nodeid": "tests/test_integration.py::test_IT04_invalid_upload_not_saved",
+  "status": "PASS"
+ },
+ {
+  "id": "ST01",
+  "module": "Home page",
+  "technique": "System",
+  "input": "GET /",
+  "expected": "HTTP 200, upload field and Predict button present",
+  "actual": "HTTP 200, elements present=True",
+  "nodeid": "tests/test_system.py::test_ST01_home_page_loads",
+  "status": "PASS"
+ },
+ {
+  "id": "ST02",
+  "module": "Normal flow",
+  "technique": "System",
+  "input": "upload healthy leaf",
+  "expected": "HTTP 200, result 'Healthy' shown",
+  "actual": "HTTP 200, 'Healthy' shown=True",
+  "nodeid": "tests/test_system.py::test_ST02_healthy_leaf_flow",
+  "status": "PASS"
+ },
+ {
+  "id": "ST03",
+  "module": "Normal flow",
+  "technique": "System",
+  "input": "upload late-blight leaf",
+  "expected": "result 'Late Blight' + treatment advice shown",
+  "actual": "HTTP 200, label+advice shown=True",
+  "nodeid": "tests/test_system.py::test_ST03_diseased_leaf_flow",
+  "status": "PASS"
+ },
+ {
+  "id": "ST04",
+  "module": "Invalid input handling",
+  "technique": "System",
+  "input": "upload dark non-leaf image",
+  "expected": "HTTP 400 and message 'Not a potato leaf image'",
+  "actual": "HTTP 400, body has disease label=False",
+  "nodeid": "tests/test_system.py::test_ST04_non_leaf_rejected",
+  "status": "PASS"
+ },
+ {
+  "id": "ST05",
+  "module": "Required-field validation",
+  "technique": "System",
+  "input": "submit form without a file",
+  "expected": "HTTP 400, 'No file selected'",
+  "actual": "HTTP 400, message shown=True",
+  "nodeid": "tests/test_system.py::test_ST05_no_file_selected",
+  "status": "PASS"
+ },
+ {
+  "id": "ST06",
+  "module": "Error messages",
+  "technique": "System",
+  "input": "upload report.pdf",
+  "expected": "HTTP 400, 'Unsupported file type'",
+  "actual": "HTTP 400, message shown=True",
+  "nodeid": "tests/test_system.py::test_ST06_wrong_file_type_message",
+  "status": "PASS"
+ },
+ {
+  "id": "ST07",
+  "module": "History across functions",
+  "technique": "System",
+  "input": "predict a.png, b.png then GET /history",
+  "expected": "both records listed",
+  "actual": "both listed=True",
+  "nodeid": "tests/test_system.py::test_ST07_history_shows_two_predictions",
+  "status": "PASS"
+ },
+ {
+  "id": "ST08",
+  "module": "History",
+  "technique": "System",
+  "input": "predict, then Clear history",
+  "expected": "'No predictions yet.' shown",
+  "actual": "empty message shown=True",
+  "nodeid": "tests/test_system.py::test_ST08_clear_history",
+  "status": "PASS"
+ },
+ {
+  "id": "UT01",
+  "module": "validate_upload",
+  "technique": "Unit",
+  "input": "leaf.png, valid 200x200 PNG",
+  "expected": "(True, 'OK')",
+  "actual": "(True, 'OK')",
+  "nodeid": "tests/test_unit.py::test_UT01_validate_accepts_valid_png",
+  "status": "PASS"
+ },
+ {
+  "id": "UT02",
+  "module": "validate_upload",
+  "technique": "Unit",
+  "input": "notes.txt",
+  "expected": "(False, 'Unsupported file type. Use JPG or PNG')",
+  "actual": "(False, 'Unsupported file type. Use JPG or PNG')",
+  "nodeid": "tests/test_unit.py::test_UT02_validate_rejects_txt",
+  "status": "PASS"
+ },
+ {
+  "id": "UT03",
+  "module": "validate_upload",
+  "technique": "Unit",
+  "input": "leaf.png, 0 bytes",
+  "expected": "(False, 'Empty file')",
+  "actual": "(False, 'Empty file')",
+  "nodeid": "tests/test_unit.py::test_UT03_validate_rejects_empty_file",
+  "status": "PASS"
+ },
+ {
+  "id": "UT04",
+  "module": "preprocess_image",
+  "technique": "Unit",
+  "input": "300x220 PNG",
+  "expected": "shape (1,128,128,3)",
+  "actual": "(1, 128, 128, 3)",
+  "nodeid": "tests/test_unit.py::test_UT04_preprocess_shape",
+  "status": "PASS"
+ },
+ {
+  "id": "UT05",
+  "module": "preprocess_image",
+  "technique": "Unit",
+  "input": "64x64 PNG",
+  "expected": "float32 values within 0-255",
+  "actual": "dtype=float32, min=55.0, max=140.0",
+  "nodeid": "tests/test_unit.py::test_UT05_preprocess_value_range_and_rgba",
+  "status": "PASS"
+ },
+ {
+  "id": "UT06",
+  "module": "predict_disease",
+  "technique": "Unit",
+  "input": "probs [0.80,0.15,0.05]",
+  "expected": "Early Blight",
+  "actual": "Early Blight",
+  "nodeid": "tests/test_unit.py::test_UT06_predict_early_blight",
+  "status": "PASS"
+ },
+ {
+  "id": "UT07",
+  "module": "predict_disease",
+  "technique": "Unit",
+  "input": "probs [0.40,0.35,0.25]",
+  "expected": "Uncertain",
+  "actual": "Uncertain",
+  "nodeid": "tests/test_unit.py::test_UT07_predict_uncertain_when_low_confidence",
+  "status": "PASS"
+ },
+ {
+  "id": "UT08",
+  "module": "get_advice",
+  "technique": "Unit",
+  "input": "label = Healthy",
+  "expected": "text containing 'No disease detected'",
+  "actual": "No disease detected. Continue regular monitoring and good field hygiene.",
+  "nodeid": "tests/test_unit.py::test_UT08_advice_for_healthy",
+  "status": "PASS"
+ },
+ {
+  "id": "UT09",
+  "module": "get_advice",
+  "technique": "Unit",
+  "input": "label = Rust (unknown)",
+  "expected": "No advice available",
+  "actual": "No advice available",
+  "nodeid": "tests/test_unit.py::test_UT09_advice_for_unknown_label",
+  "status": "PASS"
+ },
+ {
+  "id": "UT10",
+  "module": "PredictionHistory.add",
+  "technique": "Unit",
+  "input": "add 1 record",
+  "expected": "count = 1",
+  "actual": "1",
+  "nodeid": "tests/test_unit.py::test_UT10_history_add_and_count",
+  "status": "PASS"
+ },
+ {
+  "id": "UT11",
+  "module": "PredictionHistory.clear",
+  "technique": "Unit",
+  "input": "add 1 then clear",
+  "expected": "count = 0",
+  "actual": "0",
+  "nodeid": "tests/test_unit.py::test_UT11_history_clear",
+  "status": "PASS"
+ },
+ {
+  "id": "UT12",
+  "module": "is_leaf_image",
+  "technique": "Unit",
+  "input": "early-blight leaf image",
+  "expected": "True",
+  "actual": "True",
+  "nodeid": "tests/test_unit.py::test_UT12_leaf_check_accepts_leaf",
+  "status": "PASS"
+ },
+ {
+  "id": "UT13",
+  "module": "is_leaf_image",
+  "technique": "Unit",
+  "input": "dark non-leaf image",
+  "expected": "False",
+  "actual": "False",
+  "nodeid": "tests/test_unit.py::test_UT13_leaf_check_rejects_non_leaf",
+  "status": "PASS"
+ }
+]
