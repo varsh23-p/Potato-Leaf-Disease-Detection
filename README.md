@@ -1,4 +1,4 @@
-# Potato Leaf Disease Detection - Web Application
+# Potato Leaf Disease Detection 
 
 A small Flask web application that lets a user upload a potato leaf photo and get a prediction (**Healthy**, **Early Blight** or **Late Blight**) with a confidence value and treatment advice. The project was built for **Software Testing Laboratory - Experiment 9 (Design, Implement and Test a Software Project)** at NMIMS, Mukesh Patel School of Technology Management & Engineering, Shirpur.
 
