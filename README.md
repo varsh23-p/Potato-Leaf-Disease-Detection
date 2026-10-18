@@ -49,7 +49,7 @@ python run.py
 
 Open **http://127.0.0.1:8000** in your browser and upload a leaf image.
 
-### Using the real model (optional)
+### Using the real model
 
 By default the app uses `StubLeafModel`, a simple colour-based stand-in with the same `predict()` interface as a Keras model. This lets the software around the model be tested quickly without TensorFlow or the dataset.
 
